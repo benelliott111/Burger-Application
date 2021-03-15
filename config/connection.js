@@ -26,17 +26,17 @@ class Database {
     }
 }
 
-function dbConnect( dbName, dbPassword ){
+function connection( dbName, dbPassword ){
     // at top INIT DB connection
     const db = new Database({
         host: "localhost",
         port: 3030,
         user: "root",
         /*! please fill in your password; then create the database name below and create the table */
-        password: 'danielsedin11',
-        database: 'burgers_db'
+        password: dbPassword,
+        database: dbName
     })
     return db
 }
 
-module.exports = dbConnect
+module.exports = connection
