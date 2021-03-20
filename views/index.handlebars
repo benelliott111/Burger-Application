@@ -1,0 +1,29 @@
+<div class="burgerImg">
+    <img src="../public/assets/img/burger.png" alt="">
+</div>
+<div class="row">
+    <div class="col">
+
+        <div class="burgers">
+            {{#each burger_waiting}}
+            <div>{{id}}{{burger_waiting}}</div>
+            <button id="{{id}}">Devour It</button>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="devoured">
+            {{#each burger_devoured}}
+            <div>{{burger_devoured}}</div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div>
+    <form action="/" method="POST">
+    <p>Enter a new burger below</p>
+    <textarea name="burger_name" id="" cols="30" rows="3"></textarea>
+    <button id="newBurger" type="submit">Submit</button>
+    </form>
+</div>

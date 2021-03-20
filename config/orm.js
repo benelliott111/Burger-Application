@@ -7,7 +7,7 @@ const orm = {
     },
 
     insertOne(){
-    db.query(`INSERT INTO burgers VALUES ('${burgername});`)
+    db.query(`INSERT INTO burgers VALUES ('${burgername}');`)
     },
 
     updateOne(){
