@@ -2,7 +2,7 @@
 
 <h2>Burgers ready to eat</h2>
 
-<ul>
+<ul id="not-devoured">
   {{#each burgers}}
   {{#unless devoured}}
   {{> burgers/burger-block devoured=0}}
@@ -12,7 +12,7 @@
 
 <h2>Devoured Burgers</h2>
 
-<ul>
+<ul id="devoured">
   {{#each burgers}}
   {{#if devoured}}
   {{> burgers/burger-block devoured=1}}
@@ -34,5 +34,5 @@
     <input type="radio" name="sleepy" value="0" id="awake"> Awake
   </div>
 
-  <button type="submit">Add Cat</button>
+  <button type="submit">Add Burger</button>
 </form>
