@@ -5,20 +5,20 @@
     <div class="col">
 
         <div class="burgers">
-            {{#each burger_waiting}}
-            <div>{{id}}{{burger_waiting}}</div>
+            {{#each burgers}}
+            <div>{{id}}{{burgers}}</div>
             <button id="{{id}}">Devour It</button>
             {{/each}}
         </div>
     </div>
 
-    <div class="col">
+    {{!-- <div class="col">
         <div class="devoured">
             {{#each burger_devoured}}
             <div>{{burger_devoured}}</div>
             {{/each}}
         </div>
-    </div>
+    </div> --}}
 </div>
 <div>
     <form action="/" method="POST">
