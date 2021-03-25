@@ -16,8 +16,8 @@ router.get('/', (req, res) => {
   });
 });
 
-router.post('/api/burgers', (req, res) => {
-  burger.create(['name', 'sleepy'], [req.body.name, req.body.sleepy], (result) => {
+router.post('/api/add/:name', (req, res) => {
+  burger.create(['burger_name', 'devoured'], [req.params.name, 0], (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
@@ -28,9 +28,9 @@ router.put('/api/burgers/:id', (req, res) => {
 
   console.log('condition', condition);
 
-  burger.update(
+  burger.updateOne(
     {
-      sleepy: req.body.sleepy,
+      devoured: 1,
     },
     condition,
     (result) => {

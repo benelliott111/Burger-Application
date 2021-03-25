@@ -1,29 +1,38 @@
-<div class="burgerImg">
-    <img src="../public/assets/img/burger.png" alt="">
-</div>
-<div class="row">
-    <div class="col">
+<h1>Burgers</h1>
 
-        <div class="burgers">
-            {{#each burgers}}
-            <div>{{id}}{{burgers}}</div>
-            <button id="{{id}}">Devour It</button>
-            {{/each}}
-        </div>
-    </div>
+<h2>Burgers ready to eat</h2>
 
-    {{!-- <div class="col">
-        <div class="devoured">
-            {{#each burger_devoured}}
-            <div>{{burger_devoured}}</div>
-            {{/each}}
-        </div>
-    </div> --}}
-</div>
-<div>
-    <form action="/" method="POST">
-    <p>Enter a new burger below</p>
-    <textarea name="burger_name" id="" cols="30" rows="3"></textarea>
-    <button id="newBurger" type="submit">Submit</button>
-    </form>
-</div>
+<ul>
+  {{#each burgers}}
+  {{#unless devoured}}
+  {{> burgers/burger-block devoured=0}}
+  {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Devoured Burgers</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#if devoured}}
+  {{> burgers/burger-block devoured=1}}
+  {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Cat</h2>
+<form id="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="slee">Sleepy?</label><br>
+    <input type="radio" name="sleepy" value="1" id="sleepy" checked> Sleepy!<br>
+    <input type="radio" name="sleepy" value="0" id="awake"> Awake
+  </div>
+
+  <button type="submit">Add Cat</button>
+</form>
