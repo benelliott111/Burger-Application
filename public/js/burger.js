@@ -26,5 +26,6 @@ async function addBurger(event) {
 	</button> </li>` 
     document.getElementById('not-devoured').innerHTML += newLI
   }
+  document.getElementById('new-burger').value = ""
 
 }
