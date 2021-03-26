@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 async function eat(event, id, name) {
   event.preventDefault()
+  console.log(id, name)
   var eaten = `<li>${name}</li>`
   document.getElementById(id).remove()
   document.getElementById('devoured').innerHTML += eaten
